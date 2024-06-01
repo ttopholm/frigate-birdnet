@@ -36,7 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/ttopholm/birdnet
+          images: ghcr.io/ttopholm/frigate-birdnet
           tags: latest
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
