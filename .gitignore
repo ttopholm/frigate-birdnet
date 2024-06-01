@@ -1,0 +1,6 @@
+venv
+.env
+labels/*
+Dockerfile-dev
+**/*.pyc
+.DS_Store

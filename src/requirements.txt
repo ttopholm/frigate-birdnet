@@ -1,0 +1,10 @@
+aiohttp==3.9.5
+aiomqtt==2.1.0
+birdnetlib==0.17.2
+pydantic==2.7.2
+tflite-runtime
+python-ffmpeg
+python-dotenv
+environs==11.0.0
+librosa 
+resampy==0.4.3
