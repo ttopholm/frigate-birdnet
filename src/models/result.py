@@ -12,3 +12,4 @@ class Bird(BaseModel):
     start_time: float
     end_time: float
     species_code: Optional[str]
+    camera: str

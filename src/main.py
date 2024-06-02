@@ -108,7 +108,8 @@ def analyze_event(client: aiomqtt.Client, event: frigate.Event) -> None:
                 'common_name': bird.common_name,
                 'scientific_name': bird.scientific_name,
                 'start_time': event.start_time + bird.start_time,
-                'end_time': event.start_time + bird.end_time
+                'end_time': event.start_time + bird.end_time,
+                'camera': event.camera
             }) 
             if ebirds:
                 for ebird in ebirds:

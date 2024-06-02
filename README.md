@@ -25,11 +25,12 @@ docker run ghcr.io/ttopholm/frigate-birdnet:latest
 ```
 {
     "image_url":"https://cdn.download.ams.birds.cornell.edu/api/v1/asset/242173971/900",
-    "common_name":"Ringdue",
+    "common_name":"Common wood pigeon",
     "scientific_name":"Columba palumbus",
     "start_time":1717265299.484562,
     "end_time":1717265302.484562,
     "species_code":"cowpig1"
+    "camera": "Backyard"
 }
 ```
 
