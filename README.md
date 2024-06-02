@@ -15,11 +15,12 @@ docker run ghcr.io/ttopholm/frigate-birdnet:latest
 | longitude | Longitude of the place where cameras are located | X ||
 | latitude  | Latitude of the place where cameras are located | X ||
 | mqtt_reconnect_interval   | reconnect interval for reconnecting to mqtt server is connection was lost (in seconds)        | | 5 |
-| subscribe_topic    | topic for subscribing to Frigate events        | | frigate/+/audio/bird |
+| subscribe-topic    | topic for subscribing to Frigate events        | | frigate/+/audio/bird |
 | publish-topic   | The topic where bird data is published to      | | birdnet/bird |
-| max_audio_duration    | Max left of recording from Frigate (in seconds)       | | 60 |
-| max_analyze_workers   | Max workers for the analyzer      | | 3 |
-| min_confidence    | Minimum confidence for the result        | | 0.25 |
+| max-audio-duration    | Max left of recording from Frigate (in seconds)       | | 60 |
+| max-analyze-workers   | Max workers for the analyzer      | | 3 |
+| min-confidence    | Minimum confidence for the result        | | 0.25 |
+| delete-frigate-event    | Deletes event in Frigate (delete no matter outcome)        | | False |
 
 # Output format
 ```

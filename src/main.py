@@ -32,6 +32,7 @@ publish_topic = env.str("publish-topic", "birdnet/bird")
 max_audio_duration = env.int("max-audio-duration", 60000)
 max_analyze_workers = env.int('max-analyze-workers', 3)
 min_confidence = env.float("min-confidence", 0.25)
+delete_frigate_event = env.bool('delete-frigate-event', False)
 
 
 def load_ebird_taxonomy():
@@ -127,6 +128,18 @@ def analyze_event(client: aiomqtt.Client, event: frigate.Event) -> None:
     except Exception as e:
         print(e)    
 
+async def delete_event(event_id: str) -> bool:
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.delete(f'{frigate_url}/api/events/{event_id}') as r:
+                if r.status == 200:
+                    return True
+    except aiohttp.ClientConnectorError as e:
+        print('no connection to Frigate http api')
+    
+    return False
+
+
 async def message_handler(client, msg):
     payload = msg.payload.decode()
     camera = msg.topic.value.split("/")[1]
@@ -138,6 +151,9 @@ async def message_handler(client, msg):
                 if event.duration < max_audio_duration:
                     if await extract_audio(event_id):
                         tpe.submit(analyze_event, client, event)
+                if delete_frigate_event:
+                    await delete_event(event.id)
+                    
 
 async def main():
     while True:
