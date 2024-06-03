@@ -14,7 +14,7 @@ docker run ghcr.io/ttopholm/frigate-birdnet:latest
 | mqtt-port    | Mqtt port        | | 1883 |
 | longitude | Longitude of the place where cameras are located | X ||
 | latitude  | Latitude of the place where cameras are located | X ||
-| mqtt_reconnect_interval   | reconnect interval for reconnecting to mqtt server is connection was lost (in seconds)        | | 5 |
+| mqtt-reconnect-interval   | reconnect interval for reconnecting to mqtt server is connection was lost (in seconds)        | | 5 |
 | subscribe-topic    | topic for subscribing to Frigate events        | | frigate/+/audio/bird |
 | publish-topic   | The topic where bird data is published to      | | birdnet/bird |
 | max-audio-duration    | Max left of recording from Frigate (in seconds)       | | 60 |
