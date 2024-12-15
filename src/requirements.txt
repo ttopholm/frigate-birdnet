@@ -1,4 +1,4 @@
-aiohttp==3.10.2
+aiohttp==3.10.11
 aiomqtt==2.1.0
 birdnetlib==0.17.2
 pydantic==2.7.2
